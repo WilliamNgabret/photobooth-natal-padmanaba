@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Photobooth Design System - Christmas Theme */
+
+@layer base {
+  :root {
+    /* Christmas Theme - Warm & Cozy (Refined) */
+    --background: 30 25% 97%;
+    /* Warm Cream */
+    --foreground: 350 15% 15%;
+
+    --card: 30 30% 99%;
+    --card-foreground: 350 15% 15%;
+
+    --popover: 30 30% 99%;
+    --popover-foreground: 350 15% 15%;
+
+    --primary: 350 70% 40%;
+    /* Deeper, richer red */
+    --primary-foreground: 30 25% 98%;
+
+    --secondary: 150 25% 22%;
+    /* Darker, pine green */
+    --secondary-foreground: 30 25% 98%;
+
+    --muted: 30 20% 92%;
+    --muted-foreground: 350 10% 40%;
+
+    --accent: 42 60% 55%;
+    /* Muted Gold */
+    --accent-foreground: 350 15% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 350 70% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom Utility Colors */
+    --success: 150 40% 30%;
+    --success-foreground: 0 0% 100%;
+    --warning: 42 70% 50%;
+    --warning-foreground: 350 15% 15%;
+
+    /* Christmas Accents - Miracle Palette */
+    --christmas-red: 350 70% 40%;
+    --christmas-green: 150 25% 22%;
+    --christmas-gold: 42 60% 55%;
+    --christmas-cream: 30 25% 97%;
+
+    --sidebar-background: 30 25% 97%;
+    --sidebar-foreground: 350 15% 25%;
+    --sidebar-primary: 350 70% 40%;
+    --sidebar-primary-foreground: 30 25% 98%;
+    --sidebar-accent: 30 20% 92%;
+    --sidebar-accent-foreground: 350 15% 15%;
+    --sidebar-border: 30 15% 85%;
+    --sidebar-ring: 350 70% 40%;
+  }
+
+  .dark {
+    --background: 350 15% 8%;
+    /* Very dark warm grey/red */
+    --foreground: 30 20% 95%;
+
+    --card: 350 15% 10%;
+    --card-foreground: 30 20% 95%;
+
+    --popover: 350 15% 10%;
+    --popover-foreground: 30 20% 95%;
+
+    --primary: 350 65% 50%;
+    --primary-foreground: 30 25% 98%;
+
+    --secondary: 150 30% 22%;
+    --secondary-foreground: 30 20% 95%;
+
+    --muted: 350 15% 15%;
+    --muted-foreground: 30 15% 55%;
+
+    --accent: 42 75% 45%;
+    --accent-foreground: 30 20% 95%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 350 15% 18%;
+    --input: 350 15% 18%;
+    --ring: 350 65% 50%;
+
+    --success: 150 45% 32%;
+    --success-foreground: 0 0% 100%;
+    --warning: 42 70% 42%;
+    --warning-foreground: 350 15% 10%;
+
+    /* Christmas Accents Dark */
+    --christmas-red: 350 65% 50%;
+    --christmas-green: 150 30% 22%;
+    --christmas-gold: 42 75% 45%;
+    --christmas-cream: 30 15% 15%;
+
+    --sidebar-background: 350 15% 8%;
+    --sidebar-foreground: 30 15% 90%;
+    --sidebar-primary: 350 65% 50%;
+    --sidebar-primary-foreground: 30 25% 98%;
+    --sidebar-accent: 350 15% 15%;
+    --sidebar-accent-foreground: 30 15% 90%;
+    --sidebar-border: 350 15% 18%;
+    --sidebar-ring: 350 65% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    @apply bg-card/85 backdrop-blur-md border border-border/50;
+  }
+
+  .accent-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2),
+      0 0 40px hsl(var(--primary) / 0.1);
+  }
+
+  /* Enhanced Christmas Glow - miracle feel */
+  .christmas-glow {
+    box-shadow: 0 0 25px hsl(var(--christmas-gold) / 0.25),
+      0 0 50px hsl(var(--christmas-red) / 0.1);
+  }
+
+  .christmas-border-glow {
+    box-shadow: 0 0 15px hsl(var(--christmas-gold) / 0.2);
+    border-color: hsl(var(--christmas-gold) / 0.5);
+  }
+
+  .christmas-gradient {
+    background: radial-gradient(circle at 50% 0%, hsl(var(--christmas-red) / 0.08), transparent 70%),
+      radial-gradient(circle at 0% 100%, hsl(var(--christmas-green) / 0.05), transparent 50%),
+      radial-gradient(circle at 100% 100%, hsl(var(--christmas-gold) / 0.05), transparent 50%);
+  }
+
+  .border-glow {
+    animation: border-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes border-glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 10px hsl(var(--primary) / 0.3),
+        0 0 20px hsl(var(--primary) / 0.15);
+    }
+
+    50% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.4),
+        0 0 40px hsl(var(--primary) / 0.2);
+    }
+  }
+
+  @keyframes flash {
+    0% {
+      opacity: 0;
+    }
+
+    20% {
+      opacity: 1;
+      background-color: hsl(var(--christmas-cream));
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .animate-flash {
+    animation: flash 0.4s ease-out;
+  }
+
+  @keyframes countdown-pulse {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-countdown {
+    animation: countdown-pulse 0.5s ease-out;
+  }
+
+  @keyframes slow-pulse {
+
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.85;
+      transform: scale(1.02);
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: slow-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes gentle-float {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.6;
+    }
+
+    50% {
+      transform: translateY(-10px) rotate(1deg);
+      opacity: 0.8;
+    }
+  }
+
+  .animate-gentle-float {
+    animation: gentle-float 10s ease-in-out infinite;
+  }
+
+  /* Touch-friendly button styles */
+  .btn-touch {
+    @apply min-h-[48px] min-w-[48px] text-lg font-medium;
+  }
+
+  /* Drag handle cursor */
+  .drag-handle {
+    @apply cursor-grab active:cursor-grabbing;
+  }
+
+  /* Christmas card styling */
+  .christmas-card {
+    @apply bg-card border border-border/60 rounded-xl shadow-lg;
+    box-shadow: 0 10px 30px -10px hsl(var(--christmas-red) / 0.1),
+      0 4px 12px -4px hsl(var(--christmas-gold) / 0.1);
+  }
+}
