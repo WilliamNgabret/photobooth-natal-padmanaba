@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 const OVERLAY_PATTERNS = [
   'main-a6-overlay.png',
   'second-a6-overlay.png',
-  'third-a6-overlay.png',
-  'fourth-a6-overlay.png',
-  'fifth-a6-overlay.png',
+  // 'third-a6-overlay.png',
+  // 'fourth-a6-overlay.png',
+  // 'fifth-a6-overlay.png',
 ];
 
 const TEMPLATES_PATH = '/templates/';
