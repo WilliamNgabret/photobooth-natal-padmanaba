@@ -1,4 +1,0 @@
-project_id = "pdstlonykoeehwhyzcpy"
-
-[functions.send-photo-email]
-verify_jwt = false
